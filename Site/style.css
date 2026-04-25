@@ -1,0 +1,138 @@
+/*Esse root servirá como referência de estilo*/
+:root {
+    --vermelho: #cc1a1a;
+    --black: #0a0a0a;
+    --bg: #0a0a0a;
+    --border: 0.15rem solid rgb(143, 0, 0);
+    font-size: 12px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: 0.2s linear; 
+    font-family: "Special Elite", system-ui;
+}
+
+body {
+    background-color: var(--bg);
+}
+
+/* GRAIN OVERLAY */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='1'/%3E%3C/svg%3E");
+    opacity: 0.080;
+    pointer-events: none;
+    z-index: 9999;
+  } 
+
+section {
+    padding: 3rem 1rem;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+.logo img{
+    width: 20rem;
+    height: auto;
+}
+
+.header {
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 99;
+    /*Esse var surge como a referência capturada no root*/
+    border-bottom: var(--border);
+}
+
+.header section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+
+}
+
+.navbar a {
+  margin: 0 1rem;
+  font-size: 1.4rem;
+  color: #fff;
+  position: relative;
+  text-decoration: none;
+}
+
+.navbar a:hover {
+  color: var(--vermelho);
+  font-size: 1.5rem;
+}
+
+.navbar a::after {
+  content: '';
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--vermelho);
+  transition: width 0.3s;
+}
+
+.navbar a:hover::after { width: 100%; }
+
+.perfil img {
+    margin: 1rem;
+    cursor: pointer
+}
+
+.perfil img:hover {
+    width: 40px;
+    height: 40px;
+}
+
+.home-container1 {
+    background: url("./img/banner.jpg");
+    height: 100vh;
+    background-position: center;
+    background-position: cover;
+}
+
+.home-container1 section {
+    display: flex;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.content {
+    max-width: 60rem;
+}
+
+.content h3 {
+    color: #ba0000;
+    font-size: 5rem;
+}
+
+.content p {
+    font-size: 2rem;
+    line-height: 1.5;
+    margin-top: 2rem;
+    font-weight: 550;
+}
+
+.botao {
+    background: var(--vermelho);
+    color: #fff;
+    padding: 1rem 3rem;
+    cursor: pointer;
+    margin-top: 2rem;
+    display: inline-block;
+}
