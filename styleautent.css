@@ -47,6 +47,33 @@
     text-decoration: none;
   }
   .logo span { color: var(--red); }
+
+  .navbar a {
+  font-family: "Special Elite", system-ui;
+  margin: 0 1rem;
+  font-size: 1.4rem;
+  color: #fff;
+  position: relative;
+  text-decoration: none;
+}
+
+.navbar a:hover {
+  color: var(--vermelho);
+  font-size: 1.5rem;
+}
+
+.navbar a::after {
+  content: '';
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--vermelho);
+  transition: width 0.3s;
+}
+
+.navbar a:hover::after { width: 100%; }
  
   .back-link {
     font-size: 0.6rem;

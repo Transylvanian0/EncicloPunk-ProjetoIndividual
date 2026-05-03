@@ -1,7 +1,7 @@
 /*Esse root servirá como referência de estilo*/
 :root {
     --vermelho: #cc1a1a;
-    --black: #0a0a0a;
+    --white: #f6f1f1;
     --bg: #0a0a0a;
     --border: 0.15rem solid rgb(143, 0, 0);
     font-size: 12px;
@@ -20,10 +20,17 @@
 body {
     background-color: var(--bg);
     font-family: "Special Elite", system-ui;
-    color: #f0ead6;
+    color: var(--white);
 }
 
-/* filtro granulado */
+/* formatção site */
+section {
+    padding: 3rem 1rem;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+/* EFEITO GRANULADO */
   body::before {
     content: '';
     position: fixed;
@@ -34,17 +41,7 @@ body {
     z-index: 9999;
   } 
 
-section {
-    padding: 3rem 1rem;
-    margin: 0 auto;
-    max-width: 1200px;
-}
-
-.logo img{
-    width: 20rem;
-    height: auto;
-}
-
+/* HEADER */
 .header {
     position: sticky;
     top: 0;
@@ -64,10 +61,15 @@ section {
     padding-bottom: 1.5rem;
 }
 
+.logo img{
+    width: 20rem;
+    height: auto;
+}
+
 .navbar a {
   margin: 0 1rem;
   font-size: 1.4rem;
-  color: #fff;
+  color: var(--white);
   position: relative;
   text-decoration: none;
 }
@@ -87,38 +89,28 @@ section {
   background: var(--vermelho);
   transition: width 0.3s;
 }
-
-.navbar a:hover::after { width: 100%; }
-
-.perfil img {
-    margin: 1rem;
-    cursor: pointer;
-    width: 40px;
-    height: 40px;
+.navbar a:hover::after { 
+    width: 100%; 
 }
 
-.perfil img:hover {
-    width: 45px;
-    height: 45px;
+.perfil a {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.3rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--white);
+    text-decoration: none;
+    opacity: 0.50;
+    
+  }
+  .perfil a:hover { 
+    opacity: 1; 
+    color: var(--vermelho);
+    font-size: 1.5rem; 
+    transition: opacity 0.2s, color 0.2s, width 0.5s;
 }
 
-.content {
-    max-width: 50rem;
-    position: relative; /* referência pro absolute da folha */
-    color: #0a0a0a;
-}
-
-.folha {
-    background-image: url("./img/folha.jpg");
-    background-size: cover;
-    background-position: center;
-    display: inline-block;
-    padding: 3rem 6rem;
-    width: 60rem;
-    position: relative;
-    left: -6rem;
-}
-
+/* DIV IMAGEM */
 .home-container1 {
     background: url("./img/banner.jpg");
     height: 100vh;
@@ -133,10 +125,29 @@ section {
     min-height: 100vh;
 }
 
+.folha {
+    background-image: url("./img/folha.jpg");
+    background-size: cover;
+    background-position: center;
+    display: inline-block;
+    padding: 3rem 6rem;
+    width: 60rem;
+    position: relative;
+    left: -6rem;
+}
+
+.content {
+    max-width: 50rem;
+    position: relative;
+    color: #0a0a0a;
+}
+
+/* CONTEUDO DENTRO DA FOLHA */
 .content h3 {
     color: #ba0000;
     font-size: 5rem;
     margin-left: 8rem;
+    text-transform: uppercase;
 }
 
 .content p {
@@ -145,11 +156,12 @@ section {
     margin-top: 2rem;
     font-weight: 550;
     margin-left: 8rem;
+    text-transform:none; 
 }
 
 .botao {
     background: var(--vermelho);
-    color: #fff;
+    color: var(--white);
     padding: 1rem 3rem;
     cursor: pointer;
     margin-top: 2rem;
@@ -157,18 +169,18 @@ section {
     margin-left: 8rem;
 }
 
-/* SECTIONS */
+/* SECTIONS DE TITULO E SUBTITULO*/
   .section {
     padding: 5rem 4rem;
     position: relative;
 }
 
 .section-label {
-    font-size: 0.65rem;
+    font-size: 1rem;
     letter-spacing: 0.3em;
     text-transform: uppercase;
-    color: #cc1a1a;
-    margin-bottom: 1rem;
+    color: var(--vermelho);
+    margin-bottom: 1.5rem;
     display: flex;
     align-items: center;
     gap: 0.8rem;
@@ -186,6 +198,8 @@ section {
     margin-bottom: 3rem;
 }
 
+
+/* GRADE DIRECIONADORA */
 .features-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -205,15 +219,11 @@ section {
     background: #2a2a2a;
 }
 
-.feature-cell:nth-child(3n) {
-    border-right: none;
-}
-
 .feature-number {
     font-family: 'Bebas Neue', sans-serif;
     font-size: 3.5rem;
-    color: #cc1a1a;
-    opacity: 0.2;
+    color: var(--vermelho);
+    opacity: 0.4;
     line-height: 1;
     margin-bottom: 0.5rem;
 }
@@ -227,50 +237,70 @@ section {
     opacity: 0.5;
 }
 
+.feature-icon img {
+    width: 30px;
+    height: 30px;
+}
+
 .feature-title {
     font-family: 'Bebas Neue', sans-serif;
-    font-size: 1.4rem;
+    font-size: 1.8rem;
     letter-spacing: 0.05em;
     margin-bottom: 0.5rem;
 }
 
 .feature-desc {
     font-family: 'Special Elite', cursive;
-    font-size: 0.8rem;
+    font-size: 1.2rem;
     line-height: 1.6;
     opacity: 0.7;
 }
 
-
-
 /* FOOTER */
-  footer {
-    background: var(--grey);
-    padding: 2.5rem 4rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-top: 2px solid var(--red);
-  }
- 
-  .footer-logo {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 2rem;
-    letter-spacing: 0.05em;
-  }
-  .footer-logo span { color: var(--red); }
- 
-  .footer-copy {
-    font-family: 'Special Elite', cursive;
-    font-size: 0.7rem;
-    opacity: 0.4;
-    text-align: center;
-  }
- 
-  .footer-anarchy {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 1.5rem;
-    color: var(--red);
-    opacity: 0.5;
-    letter-spacing: 0.1em;
-  }
+.footer {
+  background: var(--grey);
+  color: var(--white);
+  padding: 2.5rem 4rem;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  border-top: var(--border);
+}
+
+.footer-left {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.footer-logo {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 2rem;
+  letter-spacing: 0.05em;
+}
+
+.footer-logo span {
+  color: var(--vermelho);
+}
+
+.footer-desc {
+  font-family: 'Special Elite', cursive;
+  font-size: 0.90rem;
+  opacity: 0.6;
+  line-height: 1.4;
+}
+
+.footer-right {
+  display: flex;
+  align-items: center;
+}
+
+.footer-diy {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.8rem;
+  color: var(--vermelho);
+  opacity: 0.8;
+  letter-spacing: 0.15em;
+}
