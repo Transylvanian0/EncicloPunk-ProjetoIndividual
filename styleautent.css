@@ -660,3 +660,14 @@ body {
     .right-panel { padding: 2rem 1.5rem; }
     .card-wrapper { max-width: 100%; }
   }
+
+  /* VALIDAÇÃO */
+  .erro {
+  display: block;
+  font-size: 0.90rem;
+  color: #cc1a1a;
+  margin-top: 0.2rem;
+  text-transform: none;
+}
+
+  
