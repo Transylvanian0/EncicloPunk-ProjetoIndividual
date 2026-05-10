@@ -3,8 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./stylehistoria.css">
     <link rel="shortcut icon" href="../img/logobranca.png" type="image/x-icon">
+    <script src="../js/script.js"></script>
+<script>
+    verificarLogin();
+</script>
     <title>Home | Enciclopunk</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -27,11 +31,431 @@
             <a href="./sobre.html">Sobre</a>
         </nav>
 
-        <div class="perfil">
-            <a href="./autenticacao.html">Login</a>
-           
-        </div>
+        <a href="index.html" class="back-link">← Voltar</a>
     </header>
+
+
+    <section class="hero-historia">
+    <div class="overlay"></div>
+
+    <div class="hero-content">
+        <span class="hero-tag">ARQUIVO SONORO // SUBGÊNEROS & CENAS</span>
+
+        <h1>
+            AS VERTENTES <br>
+            DO PUNK
+        </h1>
+
+        <p>
+            O punk nunca foi uma coisa só. Com o passar das décadas,
+            diferentes cenas, ideias políticas, regiões e gerações criaram
+            novos sons, novas estéticas e novas formas de resistência.
+        </p>
+
+        <a href="#inicio" class="botao">EXPLORAR CENAS</a>
+    </div>
+
+    <div class="hero-colagem">
+        <div class="polaroid p1"></div>
+        <div class="polaroid p2"></div>
+        <div class="polaroid p3"></div>
+    </div>
+</section>
+
+<section class="timeline-intro" id="inicio">
+    <div class="section-label">SUBGÊNEROS</div>
+
+    <div class="section-title">
+        Cada Cena Criou Sua Própria Voz.
+    </div>
+
+    <p class="intro-text">
+        Algumas vertentes nasceram da política. Outras da velocidade,
+        da raiva, da periferia ou da necessidade de experimentação.
+        O punk se fragmentou em dezenas de caminhos diferentes, mas todos mantiveram a ideia central de independência e expressão.
+    </p>
+</section>
+
+<section class="timeline-section">
+
+    <!-- PUNK ROCK -->
+    <div class="timeline-card">
+        <div class="timeline-year">1970s</div>
+
+        <div class="timeline-content">
+            <h2>Punk Rock</h2>
+
+            <p>
+                A forma clássica do punk. Simples, rápida, agressiva e direta.
+                Surgiu entre Nova York e Londres nos anos 70 como resposta
+                ao rock elitista e à crise social.
+            </p>
+
+            <p>
+                Os Ramones aceleraram o rock ao extremo. Já Sex Pistols e The Clash
+                transformaram o gênero em movimento político e cultural.
+            </p>
+
+            <div class="info-grid">
+                <div class="info-item">
+                    <span>Som</span>
+                    Rápido, cru e simples.
+                </div>
+
+                <div class="info-item">
+                    <span>Bandas</span>
+                    Ramones, The Clash, Sex Pistols.
+                </div>
+
+                <div class="info-item">
+                    <span>Base</span>
+                    DIY e anti-sistema.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- HARDCORE -->
+    <div class="timeline-card reverse">
+        <div class="timeline-year">1980s</div>
+
+        <div class="timeline-content">
+            <h2>Hardcore Punk</h2>
+
+            <p>
+                Mais rápido, mais pesado e mais agressivo.
+                O hardcore nasceu quando o punk tradicional ficou mais radical.
+            </p>
+
+            <p>
+                A cena hardcore americana cresceu em cidades como Los Angeles,
+                Washington D.C. e Nova York.
+            </p>
+
+            <p>
+                Bandas como Black Flag, Minor Threat e Bad Brains transformaram
+                os shows em explosões físicas e políticas.
+            </p>
+
+            <div class="quote-box">
+                “Hardcore não era entretenimento. Era descarga emocional.”
+            </div>
+        </div>
+    </div>
+
+    <!-- OI -->
+    <div class="timeline-card">
+        <div class="timeline-year">UK</div>
+
+        <div class="timeline-content">
+            <h2>Oi!</h2>
+
+            <p>
+                O Oi! nasceu na classe trabalhadora inglesa no final dos anos 70.
+            </p>
+
+            <p>
+                Misturava punk rock com cultura skinhead operária,
+                focando em temas urbanos, futebol, desemprego e vida nas ruas.
+            </p>
+
+            <p>
+                Apesar da associação errada feita pela mídia com grupos extremistas,
+                muitas bandas Oi! eram antifascistas.
+            </p>
+
+            <p>
+                Cockney Rejects, Angelic Upstarts e The Business ajudaram
+                a consolidar a cena.
+            </p>
+        </div>
+    </div>
+
+    <!-- RIOT -->
+    <div class="timeline-card reverse">
+        <div class="timeline-year">1990s</div>
+
+        <div class="timeline-content">
+            <h2>Riot Grrrl</h2>
+
+            <p>
+                Movimento feminista punk surgido nos EUA nos anos 90.
+            </p>
+
+            <p>
+                O Riot Grrrl discutia machismo, violência contra mulheres,
+                autonomia corporal e liberdade feminina dentro da cena alternativa.
+            </p>
+
+            <p>
+                Bandas como Bikini Kill, Bratmobile e Heavens to Betsy
+                usavam música, zines e arte como ferramentas políticas.
+            </p>
+
+            <div class="quote-box">
+                “Revolution Girl Style Now.”
+            </div>
+        </div>
+    </div>
+
+    <!-- CRUST -->
+    <div class="timeline-card">
+        <div class="timeline-year">D-BEAT</div>
+
+        <div class="timeline-content">
+            <h2>Crust Punk</h2>
+
+            <p>
+                Extremamente pesado, sujo e pessimista.
+                O crust mistura hardcore, metal extremo e anarcho punk.
+            </p>
+
+            <p>
+                Letras sobre guerra, colapso social,
+                crise ambiental e destruição humana são comuns.
+            </p>
+
+            <p>
+                Amebix, Doom, Discharge e Anti Cimex influenciaram fortemente o estilo.
+            </p>
+        </div>
+    </div>
+
+    <!-- STREET -->
+    <div class="timeline-card reverse">
+        <div class="timeline-year">RUAS</div>
+
+        <div class="timeline-content">
+            <h2>Street Punk</h2>
+
+            <p>
+                Mais urbano, barulhento e visualmente agressivo.
+            </p>
+
+            <p>
+                O street punk enfatiza coros coletivos,
+                moicanos gigantes, jaquetas cheias de patches
+                e energia caótica.
+            </p>
+
+            <p>
+                Exploited, GBH e Casualties ajudaram
+                a popularizar a estética mundialmente.
+            </p>
+        </div>
+    </div>
+
+    <!-- POST -->
+    <div class="timeline-card">
+        <div class="timeline-year">ART</div>
+
+        <div class="timeline-content">
+            <h2>Post-Punk</h2>
+
+            <p>
+                O post-punk surgiu quando bandas começaram
+                a experimentar além da estrutura tradicional do punk.
+            </p>
+
+            <p>
+                O gênero incorporou atmosferas sombrias,
+                sintetizadores, dub, experimentalismo e arte conceitual.
+            </p>
+
+            <p>
+                Joy Division, Siouxsie and the Banshees,
+                Gang of Four e Bauhaus foram fundamentais.
+            </p>
+        </div>
+    </div>
+
+    <!-- POP -->
+    <div class="timeline-card reverse">
+        <div class="timeline-year">MTV</div>
+
+        <div class="timeline-content">
+            <h2>Pop Punk</h2>
+
+            <p>
+                Mais melódico, acessível e comercial.
+            </p>
+
+            <p>
+                O pop punk explodiu nos anos 90 com MTV,
+                skate culture e festivais como Warped Tour.
+            </p>
+
+            <p>
+                Green Day, Blink-182 e Sum 41 levaram
+                elementos punk para o mainstream global.
+            </p>
+        </div>
+    </div>
+
+    <!-- BRASIL -->
+    <div class="timeline-card" id="punk-brasileiro">
+        <div class="timeline-year">BR</div>
+
+        <div class="timeline-content">
+            <h2>Punk Brasileiro</h2>
+
+            <p>
+                O punk brasileiro nasceu nas periferias urbanas,
+                principalmente em São Paulo.
+            </p>
+
+            <p>
+                Mais agressivo socialmente, o movimento refletia
+                pobreza, violência policial, desemprego e abandono estatal.
+            </p>
+
+            <p>
+                Cólera, Olho Seco, Inocentes, Garotos Podres
+                e Ratos de Porão marcaram gerações.
+            </p>
+
+            <div class="quote-box">
+                “O punk brasileiro nasceu sobrevivendo.”
+            </div>
+        </div>
+    </div>
+
+    <!-- ANARCHO -->
+    <div class="timeline-card reverse">
+        <div class="timeline-year">DIY</div>
+
+        <div class="timeline-content">
+            <h2>Anarcho Punk</h2>
+
+            <p>
+                Fortemente político e ligado ao anarquismo.
+            </p>
+
+            <p>
+                O anarcho punk defendia autogestão,
+                antifascismo, veganismo, ocupações e pacifismo.
+            </p>
+
+            <p>
+                Crass foi a banda mais influente da vertente,
+                criando uma estética visual extremamente marcante.
+            </p>
+        </div>
+    </div>
+
+    <!-- SKATE -->
+    <div class="timeline-card">
+        <div class="timeline-year">SK8</div>
+
+        <div class="timeline-content">
+            <h2>Skate Punk</h2>
+
+            <p>
+                Mistura de hardcore melódico com cultura skate.
+            </p>
+
+            <p>
+                Rápido, energético e técnico,
+                ficou popular entre os anos 90 e 2000.
+            </p>
+
+            <p>
+                NOFX, Pennywise, Lagwagon e Millencolin
+                ajudaram a espalhar o gênero mundialmente.
+            </p>
+        </div>
+    </div>
+
+    <!-- UK82 -->
+    <div class="timeline-card reverse">
+        <div class="timeline-year">UK82</div>
+
+        <div class="timeline-content">
+            <h2>UK82</h2>
+
+            <p>
+                Segunda onda do punk britânico.
+            </p>
+
+            <p>
+                Mais agressiva que o punk clássico,
+                a cena UK82 influenciou diretamente o hardcore,
+                o street punk e o crust.
+            </p>
+
+            <p>
+                Discharge, GBH, Varukers e Chaos UK
+                são algumas das bandas mais importantes do estilo.
+            </p>
+        </div>
+    </div>
+
+</section>
+
+<section class="legacy-section">
+    <div class="section-label">EXPANSÃO</div>
+
+    <div class="section-title">
+        O Punk Virou Um Universo.
+    </div>
+
+    <div class="legacy-grid">
+
+        <div class="legacy-card">
+            <h3>Música</h3>
+            <p>
+                Das demos caseiras ao hardcore extremo,
+                o punk influenciou centenas de gêneros diferentes.
+            </p>
+        </div>
+
+        <div class="legacy-card">
+            <h3>Visual</h3>
+            <p>
+                Cada vertente criou sua própria estética:
+                spikes, couro, coturnos, roupas militares ou DIY.
+            </p>
+        </div>
+
+        <div class="legacy-card">
+            <h3>Política</h3>
+            <p>
+                O punk é, e sempre será ligado ao antifascismo,
+                ocupações culturais e resistência social.
+            </p>
+        </div>
+
+        <div class="legacy-card">
+            <h3>Comunidade</h3>
+            <p>
+                Mesmo fragmentado em dezenas de estilos,
+                o punk ainda compartilha o espírito independente.
+            </p>
+        </div>
+
+    </div>
+</section>
+
+<section class="final-banner">
+
+    <div class="final-content">
+        <span>ARQPUNK // TODAS AS CENAS</span>
+
+        <h2>
+            O Punk Nunca Ficou Parado.
+            <br>
+            Ele Se Multiplicou.
+        </h2>
+
+        <p>
+            Cada geração encontrou sua própria maneira
+            de transformar barulho em identidade,
+            resistência e comunidade.
+        </p>
+    </div>
+</section>
+
+
 
 
     <!-- FOOTER -->

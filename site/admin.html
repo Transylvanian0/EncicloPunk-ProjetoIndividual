@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styleadmin.css">
+    <link rel="shortcut icon" href="../img/logobranca.png" type="image/x-icon">
+  <title>Admin | ArqPunk</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Special+Elite&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+  <style>
+    
+  </style>
+</head>
+<body>
+
+  <header class="header">
+    <section>
+      <a href="index.html" class="logo-container">
+        <img src="../img/logobranca.png" alt="Logo" class="logo-img">
+        <span class="logo-text">Arq<span>Punk</span></span>
+      </a>
+      <nav class="navbar">
+        <a href="./index.html">Home</a>
+        <a href="./historia.html">História</a>
+        <a href="./vertentes.html">Vertentes</a>
+        <a href="./musica.html">Música</a>
+        <a href="./sobre.html">Sobre</a>
+      </nav>
+      <a href="index.html" class="back-link">← Voltar</a>
+    </section>
+  </header>
+
+  <div class="shell">
+
+    <!-- TOPO -->
+    <div class="topo">
+      <div class="topo-esq">
+        <div class="topo-label">// acesso restrito · admin</div>
+        <div class="topo-titulo">PAINEL DE CONTROLE</div>
+        <div class="topo-sub">visão geral do sistema · ArqPunk</div>
+      </div>
+      <div class="topo-dir">
+        <div class="topo-data" id="data-atual"></div>
+        <div class="topo-status">
+          <div class="status-live"></div>
+          <span class="status-txt">Sistema online</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- KPIs -->
+    <div class="kpi-row">
+      <div class="kpi kpi-amarelo">
+        <div class="kpi-label">Total de Usuários</div>
+        <div class="kpi-num">47</div>
+        <div class="kpi-sub">+3 essa semana</div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-label">Acessos Totais</div>
+        <div class="kpi-num">1.2k</div>
+        <div class="kpi-sub">todas as páginas</div>
+      </div>
+      <div class="kpi kpi-verde">
+        <div class="kpi-label">Página Mais Acessada</div>
+        <div class="kpi-num" style="font-size:1.8rem; padding-top:0.4rem">Música</div>
+        <div class="kpi-sub">312 acessos</div>
+      </div>
+      <div class="kpi kpi-branco">
+        <div class="kpi-label">Estados Ativos</div>
+        <div class="kpi-num">6</div>
+        <div class="kpi-sub">estados com usuários</div>
+      </div>
+    </div>
+
+    <!-- GRID PRINCIPAL -->
+    <div class="main-grid">
+
+      <!-- ESTILOS -->
+      <div class="card">
+        <div class="card-top">
+          <span class="card-label">// estilos</span>
+          <span class="card-titulo">Mais Populares</span>
+        </div>
+        <div class="ranking" id="estilos-ranking"></div>
+      </div>
+
+      <!-- BANDAS -->
+      <div class="card">
+        <div class="card-top">
+          <span class="card-label">// bandas</span>
+          <span class="card-titulo">Mais Favoritadas</span>
+        </div>
+        <div class="ranking" id="bandas-ranking"></div>
+      </div>
+
+      <!-- ESTADOS -->
+      <div class="card">
+        <div class="card-top">
+          <span class="card-label">// geografia</span>
+          <span class="card-titulo">Por Estado</span>
+        </div>
+        <div class="estados-grid" id="estados-grid"></div>
+      </div>
+
+      <!-- ÚLTIMOS ACESSOS -->
+      <div class="card full">
+        <div class="card-top">
+          <span class="card-label">// atividade · últimos acessos registrados</span>
+          <span class="card-titulo">Log de Acessos</span>
+        </div>
+        <table class="tabela">
+          <thead>
+            <tr>
+              <th>Status</th>
+              <th>Usuário</th>
+              <th>Página</th>
+              <th>Cidade · Estado</th>
+              <th>Acessado em</th>
+            </tr>
+          </thead>
+          <tbody id="acessos-tbody"></tbody>
+        </table>
+      </div>
+
+    </div>
+
+    <footer class="footer">
+    <div class="footer-left">
+      <div class="footer-logo">Arq<span>Punk</span></div>
+      <p class="footer-desc">
+        Feito com amor · Nenhum direito reservado<br>
+        Copie, cole, rasgue e distribua.
+      </p>
+    </div>
+    <div class="footer-right">
+      <span class="footer-diy">D.I.Y.</span>
+    </div>
+  </footer>
+
+  </div>
+
+   <script src="../js/admin.js"></script>
+</body>
+</html>

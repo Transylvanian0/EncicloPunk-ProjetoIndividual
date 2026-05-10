@@ -1,47 +1,4 @@
-// ================================================
-// VETORES
-// ================================================
-
-let estilos = [
-  'Punk Rock', 'Hardcore', 'Oi!', 'Riot Grrrl',
-  'Crust', 'Street Punk', 'Post-Punk', 'Pop Punk',
-  'Punk Brasileiro', 'Anarcho Punk', 'Skate Punk', 'UK82'
-];
-
-let bandasSugeridas = [
-  'Ramones', 'Sex Pistols', 'The Clash', 'Black Flag',
-  'Dead Kennedys', 'Misfits', 'Bikini Kill', 'Ratos de Porão',
-  'Garotos Podres', 'Buzzcocks'
-];
-
-// ================================================
-// PREENCHE OS CONTAINERS COM OS VETORES
-// ================================================
-
-let containerEstilos = document.getElementById('estilos-cloud');
-estilos.forEach(function(estilo) {
-  let botao = document.createElement('button');
-  botao.type = 'button';
-  botao.className = 'tag-btn';
-  botao.textContent = estilo;
-  botao.onclick = function() { selecionarTag(botao); };
-  containerEstilos.appendChild(botao);
-});
-
-let containerBandas = document.getElementById('bandas-sugestoes');
-bandasSugeridas.forEach(function(banda) {
-  let botao = document.createElement('button');
-  botao.type = 'button';
-  botao.className = 'tag-btn';
-  botao.textContent = banda;
-  botao.onclick = function() { selecionarBanda(botao); };
-  containerBandas.appendChild(botao);
-});
-
-// ================================================
 // TROCAR ENTRE LOGIN E CADASTRO
-// ================================================
-
 function switchTab(qual) {
   let formLogin    = document.getElementById('form-login');
   let formCadastro = document.getElementById('form-cadastro');
@@ -61,29 +18,22 @@ function switchTab(qual) {
   }
 }
 
-// ================================================
 // STEPS DO CADASTRO
-// ================================================
-
 let stepLabels = { 1: 'Conta', 2: 'Estilos', 3: 'Bandas' };
 
 function goStep(numero) {
 
-  // valida antes de ir pro step 2
   if (numero === 2) {
     let ok = validarStep1();
     if (!ok) return;
   }
 
-  // esconde todos os steps
   document.querySelectorAll('.step').forEach(function(step) {
     step.classList.remove('active');
   });
 
-  // mostra o step certo
   document.getElementById('step-' + numero).classList.add('active');
 
-  // atualiza os pontinhos
   for (let i = 1; i <= 3; i++) {
     let dot = document.getElementById('dot-' + i);
     dot.classList.remove('active', 'done');
@@ -94,10 +44,7 @@ function goStep(numero) {
   document.getElementById('step-label').textContent = stepLabels[numero];
 }
 
-// ================================================
 // VALIDAÇÕES
-// ================================================
-
 function mostrarErro(input, mensagem) {
   let erroVelho = input.parentNode.querySelector('.erro');
   if (erroVelho) erroVelho.remove();
@@ -116,10 +63,9 @@ function limparErro(input) {
 }
 
 function validarStep1() {
-  let nome        = document.querySelector('#step-1 input[type="text"]');
-  let email       = document.querySelector('#step-1 input[type="email"]');
-  let senha       = document.querySelectorAll('#step-1 input[type="password"]')[0];
-  let confirmacao = document.querySelectorAll('#step-1 input[type="password"]')[1];
+  let nome  = document.querySelector('#step-1 input[type="text"]');
+  let email = document.querySelector('#step-1 input[type="email"]');
+  let senha = document.querySelector('#step-1 input[type="password"]');
   let tudo_ok = true;
 
   if (nome.value.trim() === '') {
@@ -144,35 +90,25 @@ function validarStep1() {
     tudo_ok = false;
   } else { limparErro(senha); }
 
-  if (senha.value !== confirmacao.value) {
-    mostrarErro(confirmacao, 'As senhas não coincidem');
-    tudo_ok = false;
-  } else { limparErro(confirmacao); }
-
   return tudo_ok;
 }
 
-// ================================================
 // ESTILOS — selecionar/desselecionar
-// ================================================
-
-function selecionarTag(botao) {
+function toggleTag(botao) {
   botao.classList.toggle('selected');
 }
 
-// ================================================
 // BANDAS — adicionar e remover
-// ================================================
-
 let bandasAdicionadas = [];
 
-function selecionarBanda(botao) {
+function addBandFromSuggestion(botao) {
   let nome = botao.textContent.trim();
 
   if (bandasAdicionadas.includes(nome)) {
     bandasAdicionadas = bandasAdicionadas.filter(function(b) { return b !== nome; });
     botao.classList.remove('selected');
-    document.getElementById('tag-' + nome.replace(/\s/g, '-')).remove();
+    let tag = document.getElementById('tag-' + nome.replace(/\s/g, '-'));
+    if (tag) tag.remove();
   } else {
     bandasAdicionadas.push(nome);
     botao.classList.add('selected');
@@ -199,7 +135,7 @@ function mostrarTagAdicionada(nome) {
   let tag = document.createElement('div');
   tag.className = 'added-tag';
   tag.id = 'tag-' + nome.replace(/\s/g, '-');
-  tag.innerHTML = nome + ' <button onclick="removerBanda(\'' + nome + '\')" title="Remover">✕</button>';
+  tag.innerHTML = nome + ' <button type="button" onclick="removerBanda(\'' + nome + '\')" title="Remover">✕</button>';
   container.appendChild(tag);
 }
 
@@ -214,10 +150,7 @@ function removerBanda(nome) {
   });
 }
 
-// ================================================
 // FINALIZAR CADASTRO
-// ================================================
-
 function submitForm() {
   let termos = document.getElementById('termos');
 
@@ -229,7 +162,7 @@ function submitForm() {
   let novoUsuario = {
     nome:    document.querySelector('#step-1 input[type="text"]').value.trim(),
     email:   document.querySelector('#step-1 input[type="email"]').value.trim(),
-    senha:   document.querySelectorAll('#step-1 input[type="password"]')[0].value,
+    senha:   document.querySelector('#step-1 input[type="password"]').value,
     estilos: Array.from(document.querySelectorAll('#estilos-cloud .tag-btn.selected')).map(function(b) { return b.textContent; }),
     bandas:  bandasAdicionadas,
     desde:   new Date().getFullYear()
@@ -250,10 +183,7 @@ function submitForm() {
   window.location.href = 'index.html';
 }
 
-// ================================================
 // LOGIN
-// ================================================
-
 function fazerLogin() {
   let email = document.querySelector('#form-login input[type="email"]');
   let senha = document.querySelector('#form-login input[type="password"]');

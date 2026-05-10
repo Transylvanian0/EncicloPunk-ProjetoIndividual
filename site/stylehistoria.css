@@ -1,0 +1,711 @@
+:root {
+    --bg: #0a0a0a;
+    --border: 0.15rem solid rgb(143, 0, 0);
+    --vermelho: #cc1a1a;
+    --white: #f6f1f1;
+    --paper: #e8dfc8;
+    --yellow: #f5c200;
+    --black: #080808;
+    font-size: 12px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: 0.2s linear;
+}
+
+section {
+    padding: 3rem 1rem;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+body {
+    background-color: var(--bg);
+    font-family: "Special Elite", system-ui;
+    color: var(--white);
+    overflow-x: hidden;
+}
+
+/*
+ GRANULADO */
+body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='1'/%3E%3C/svg%3E");
+
+    opacity: 0.08;
+
+    pointer-events: none;
+    z-index: 9999;
+}
+
+/*
+ HEADER */
+header {
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    z-index: 99;
+
+    border-bottom: var(--border);
+
+    backdrop-filter: blur(3px);
+
+    background: rgba(0,0,0,.45);
+}
+
+.header section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-img {
+    width: 40px;
+    height: auto;
+}
+
+.logo-text {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.8rem;
+    letter-spacing: 0.08em;
+    color: var(--white);
+}
+
+.logo-text span {
+    color: var(--vermelho);
+    font-family: 'Special Elite', cursive;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: -1px;
+}
+
+.navbar a {
+    font-family: "Special Elite", system-ui;
+    margin: 0 1rem;
+    font-size: 1.4rem;
+    color: var(--white);
+    position: relative;
+}
+
+.navbar a:hover {
+    color: var(--vermelho);
+    font-size: 1.5rem;
+}
+
+.navbar a::after {
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+
+    width: 0;
+    height: 1px;
+
+    background: var(--vermelho);
+
+    transition: width 0.3s;
+}
+
+.navbar a:hover::after {
+    width: 100%;
+}
+
+.back-link {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.3rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--white);
+    text-decoration: none;
+    opacity: 0.50;
+  }
+  .back-link:hover { 
+    opacity: 1; 
+    color: var(--vermelho);
+    font-size: 1.5rem; 
+    transition: opacity 0.2s, color 0.2s, font-size 0.2s;
+   }
+
+/*
+ HERO */
+.hero-historia {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 5rem;
+    padding: 0.80rem 8%;
+    position: relative;
+    background:
+        linear-gradient(rgba(0,0,0,.82), rgba(0,0,0,.92)),
+        url('../img/bghistoria.webp');
+    background-size: cover;
+    background-position: center;
+    border-bottom: var(--border);
+}
+
+.overlay {
+    position: absolute;
+    inset: 0;
+
+    background:
+        repeating-linear-gradient(
+            0deg,
+            rgba(255,255,255,.02),
+            rgba(255,255,255,.02) 1px,
+            transparent 1px,
+            transparent 4px
+        );
+
+    pointer-events: none;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 60rem;
+}
+
+.hero-tag {
+    font-size: 1.2rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+
+    color: var(--vermelho);
+
+    margin-bottom: 2rem;
+
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+}
+
+.hero-tag::before {
+    content: '//';
+    opacity: .5;
+}
+
+.hero-content h1 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(5rem, 9vw, 9rem);
+    line-height: .9;
+
+    margin-bottom: 2rem;
+}
+
+.hero-content p {
+    font-size: 1.5rem;
+    line-height: 1.8;
+
+    opacity: .7;
+
+    max-width: 50rem;
+
+    text-transform: none;
+
+    margin-bottom: 3rem;
+}
+
+.botao {
+    display: inline-block;
+
+    background: var(--black);
+    color: var(--paper);
+
+    padding: 1rem 2rem;
+
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.3rem;
+    letter-spacing: .15em;
+
+    box-shadow: 4px 4px 0 var(--vermelho);
+}
+
+.botao:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 6px 6px 0 var(--vermelho);
+}
+
+/*
+ COLAGEM */
+.hero-colagem {
+    position: relative;
+
+    width: 40rem;
+    height: 42rem;
+}
+
+.polaroid {
+    position: absolute;
+
+    width: 20rem;
+    height: 25rem;
+
+    background: var(--paper);
+
+    border: 8px solid #fff;
+
+    box-shadow: 0 0 3rem rgba(0,0,0,.5);
+
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+
+    padding-bottom: 1rem;
+
+    color: var(--black);
+
+    font-size: .9rem;
+
+    text-align: center;
+}
+
+.p1 {
+    top: 0;
+    left: 0;
+
+    transform: rotate(-8deg);
+
+    background:
+        url('https://i.makeagif.com/media/8-28-2016/_DEat_.gif');
+
+    background-size: cover;
+    background-position: center;
+}
+
+.p2 {
+    top: 5rem;
+    right: 0;
+
+    transform: rotate(7deg);
+
+    background:
+        url('https://media.tenor.com/xEuSZXyNNfQAAAAM/sid-vicious-sex-pistols.gif');
+
+    background-size: cover;
+    background-position: center;
+}
+
+.p3 {
+    bottom: 0;
+    left: 8rem;
+
+    transform: rotate(-4deg);
+
+    background:
+        url('../img/gifJoey.gif');
+
+    background-size: cover;
+    background-position: center;
+}
+
+/*
+ INTRO */
+.timeline-intro {
+    padding: 8rem 1rem 3rem;
+    text-align: center;
+}
+
+.section-label {
+    font-size: 1.2rem;
+    letter-spacing: 0.3em;
+
+    color: var(--vermelho);
+
+    margin-bottom: 1rem;
+}
+
+.section-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(4rem, 7vw, 7rem);
+    line-height: .95;
+
+    margin-bottom: 2rem;
+}
+
+.intro-text {
+    max-width: 75rem;
+
+    margin: auto;
+
+    font-size: 1.4rem;
+    line-height: 2;
+
+    opacity: .65;
+
+    text-transform: none;
+}
+
+/*
+ TIMELINE */
+.timeline-section {
+    position: relative;
+    padding: 5rem 8% 10rem;
+}
+
+.timeline-section::before {
+    content: '';
+
+    position: absolute;
+
+    top: 0;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: 2px;
+    height: 100%;
+
+    background: rgba(204,26,26,.4);
+}
+
+.timeline-card {
+    width: 100%;
+
+    display: flex;
+    justify-content: flex-start;
+
+    margin-bottom: 7rem;
+
+    position: relative;
+}
+
+.timeline-card.reverse {
+    justify-content: flex-end;
+    margin-left: 20px;
+}
+
+.timeline-year {
+    position: absolute;
+
+    left: 50%;
+    top: 3rem;
+
+    transform: translateX(-50%);
+
+    width: 8rem;
+    height: 8rem;
+
+    border-radius: 50%;
+
+    background: transparent;
+
+    border: 2px solid var(--vermelho);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.5rem;
+
+    z-index: 5;
+}
+
+.timeline-content {
+    width: 45%;
+
+    background: #111;
+
+    border: 1px solid #222;
+
+    padding: 3rem;
+
+    position: relative;
+}
+
+.timeline-content::before {
+    content: '';
+
+    position: absolute;
+
+    top: -10px;
+    left: 40px;
+
+    width: 70px;
+    height: 18px;
+
+    background: rgba(245,194,0,.45);
+
+    transform: rotate(-4deg);
+}
+
+.timeline-content h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 3.5rem;
+
+    margin-bottom: 2rem;
+}
+
+.timeline-content p,
+.timeline-content li {
+    font-size: 1.25rem;
+    line-height: 1.9;
+
+    opacity: .72;
+
+    margin-bottom: 1.5rem;
+
+    text-transform: none;
+}
+
+.timeline-content ul {
+    padding-left: 2rem;
+}
+
+.quote-box {
+    margin-top: 3rem;
+
+    border-left: 3px solid var(--vermelho);
+
+    padding-left: 1.5rem;
+
+    font-size: 1.2rem;
+
+    opacity: .8;
+}
+
+/*
+ INFO GRID */
+.info-grid {
+    display: grid;
+
+    grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+
+    gap: 1rem;
+
+    margin-top: 3rem;
+}
+
+.info-item {
+    background: #171717;
+
+    border: 1px solid #242424;
+
+    padding: 1.5rem;
+
+    font-size: 1rem;
+    line-height: 1.8;
+}
+
+.info-item span {
+    display: block;
+
+    margin-bottom: .7rem;
+
+    color: var(--vermelho);
+
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.5rem;
+}
+
+/*
+ LEGADO */
+.legacy-section {
+    padding: 8rem 8%;
+}
+
+.legacy-grid {
+    display: grid;
+
+    grid-template-columns: repeat(auto-fit, minmax(24rem, 1fr));
+
+    gap: 2rem;
+
+    margin-top: 4rem;
+}
+
+.legacy-card {
+    background: #111;
+
+    border: 1px solid #242424;
+
+    padding: 3rem;
+}
+
+.legacy-card:hover {
+    border-color: var(--vermelho);
+    transform: translateY(-5px);
+}
+
+.legacy-card h3 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 3rem;
+
+    margin-bottom: 1.5rem;
+}
+
+.legacy-card p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+
+    opacity: .7;
+
+    text-transform: none;
+}
+
+/*
+ FINAL */
+.final-banner {
+    min-height: 60vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 5rem;
+
+    background:
+        linear-gradient(rgba(0,0,0,.85), rgba(0,0,0,.95)),
+        url('../img/finalpunk.jpg');
+
+    background-size: cover;
+    background-position: center;
+
+    border-top: var(--border);
+}
+
+.final-content {
+    max-width: 70rem;
+}
+
+.final-content span {
+    color: var(--vermelho);
+
+    font-size: 1rem;
+    letter-spacing: .3em;
+}
+
+.final-content h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(4rem, 7vw, 7rem);
+
+    line-height: .95;
+
+    margin: 2rem 0;
+}
+
+.final-content p {
+    font-size: 1.3rem;
+    line-height: 2;
+
+    opacity: .7;
+
+    text-transform: none;
+}
+
+/*
+ FOOTER */
+.footer {
+    padding: 2.5rem 4rem;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    border-top: var(--border);
+}
+
+.footer-logo {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2rem;
+}
+
+.footer-logo span {
+    color: var(--vermelho);
+}
+
+.footer-desc {
+    font-size: .9rem;
+    opacity: .6;
+
+    margin-top: .5rem;
+
+    line-height: 1.5;
+
+    text-transform: none;
+}
+
+.footer-diy {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.8rem;
+
+    color: var(--vermelho);
+
+    letter-spacing: .15em;
+}
+
+/*
+ RESPONSIVO */
+@media(max-width: 900px) {
+
+    .hero-historia {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .timeline-section::before {
+        left: 20px;
+    }
+
+    .timeline-card,
+    .timeline-card.reverse {
+        justify-content: flex-end;
+    }
+
+    .timeline-year {
+        left: 20px;
+
+        width: 6rem;
+        height: 6rem;
+    }
+
+    .timeline-content {
+        width: calc(100% - 7rem);
+    }
+}
+
+@media(max-width: 768px) {
+
+    .navbar {
+        display: none;
+    }
+
+    .hero-colagem {
+        width: 100%;
+        height: 32rem;
+    }
+
+    .polaroid {
+        width: 14rem;
+        height: 18rem;
+    }
+
+    .footer {
+        flex-direction: column;
+        text-align: center;
+        gap: 1.5rem;
+    }
+}

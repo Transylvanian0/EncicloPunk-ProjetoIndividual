@@ -76,15 +76,7 @@
                 <label>Senha</label>
                 <input type="password" placeholder="••••••••">
               </div>
-              <a href="#" class="form-link">Esqueci minha senha</a>
-              <div class="check-row">
-                <input type="checkbox" id="lembrar">
-                <label class="check-text" for="lembrar">Lembrar de mim nessa máquina</label>
-              </div>
               <button class="btn-submit" onclick="fazerLogin()">Entrar no Arquivo</button>
-              <div class="sep"><span>ou</span></div>
-              <button class="btn-ghost" type="button" onclick="window.location.href='index.html'">Continuar sem conta</button>
-              <p class="form-note">Acesse o conteúdo das páginas sem uma conta.</p>
             </form>
 
             <!-- CADASTRO -->
@@ -114,10 +106,6 @@
                     <label>Senha</label>
                     <input type="password" placeholder="Mín. 8 caracteres">
                   </div>
-                  <div class="field">
-                    <label>Confirmar</label>
-                    <input type="password" placeholder="Repita">
-                  </div>
                 </div>
                 <button class="btn-next" type="button" onclick="goStep(2)">Próximo →</button>
               </div>
@@ -127,7 +115,20 @@
                 <div>
                   <div class="tag-section-label">Seus estilos favoritos</div>
                   <div class="tag-hint">Selecione quantos quiser</div>
-                  <div class="tag-cloud" id="estilos-cloud"></div>
+                  <div class="tag-cloud" id="estilos-cloud">
+                  <button type="button" class="tag-btn" onclick="toggleTag(this)">Punk Rock</button>
+                  <button type="button" class="tag-btn" onclick="toggleTag(this)">Hardcore</button>
+                  <button type="button" class="tag-btn" onclick="toggleTag(this)">Oi!</button>
+                  <button type="button" class="tag-btn" onclick="toggleTag(this)">Riot Grrrl</button>
+                  <button type="button" class="tag-btn" onclick="toggleTag(this)">Crust</button>
+                  <button type="button" class="tag-btn" onclick="toggleTag(this)">Street Punk</button>
+                  <button type="button" class="tag-btn" onclick="toggleTag(this)">Post-Punk</button>
+                  <button type="button" class="tag-btn" onclick="toggleTag(this)">Pop Punk</button>
+                  <button type="button" class="tag-btn" onclick="toggleTag(this)">Punk Brasileiro</button>
+                  <button type="button" class="tag-btn" onclick="toggleTag(this)">Anarcho Punk</button>
+                  <button type="button" class="tag-btn" onclick="toggleTag(this)">Skate Punk</button>
+                  <button type="button" class="tag-btn" onclick="toggleTag(this)">UK82</button>
+                </div>
                 </div>
                 <div class="btn-nav-row">
                   <button class="btn-back" type="button" onclick="goStep(1)">← Voltar</button>
@@ -140,7 +141,18 @@
                 <div>
                   <div class="tag-section-label">Bandas que você curte</div>
                   <div class="tag-hint">Clique nas sugestões ou adicione a sua</div>
-                  <div class="tag-cloud" style="margin-bottom: 0.8rem;" id="bandas-sugestoes"></div>
+                  <div class="tag-cloud" style="margin-bottom: 0.8rem;" id="bandas-sugestoes">
+                    <button type="button" class="tag-btn" onclick="addBandFromSuggestion(this)">Ramones</button>
+                  <button type="button" class="tag-btn" onclick="addBandFromSuggestion(this)">Sex Pistols</button>
+                  <button type="button" class="tag-btn" onclick="addBandFromSuggestion(this)">The Clash</button>
+                  <button type="button" class="tag-btn" onclick="addBandFromSuggestion(this)">Black Flag</button>
+                  <button type="button" class="tag-btn" onclick="addBandFromSuggestion(this)">Dead Kennedys</button>
+                  <button type="button" class="tag-btn" onclick="addBandFromSuggestion(this)">Misfits</button>
+                  <button type="button" class="tag-btn" onclick="addBandFromSuggestion(this)">Bikini Kill</button>
+                  <button type="button" class="tag-btn" onclick="addBandFromSuggestion(this)">Ratos de Porão</button>
+                  <button type="button" class="tag-btn" onclick="addBandFromSuggestion(this)">Garotos Podres</button>
+                  <button type="button" class="tag-btn" onclick="addBandFromSuggestion(this)">Buzzcocks</button>
+                  </div>
                   <div class="field">
                     <label>Adicionar outra banda</label>
                     <div class="band-input-row">
@@ -185,7 +197,6 @@
     </div>
   </footer>
 
-  <script src="../js/script.js"></script>
-
+  <script src="../js/autenticacao.js"></script>
 </body>
 </html>
